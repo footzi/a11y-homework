@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
-/*todo*/
-/*1. Перевести заголовки*/
-
 :root {
     --main-color: #000000;
     --secondary-color: #FFFFFF;
     --action-color: #6800B9;
+    --text-color: #000000;
+    --stock-color: #FF0000;
+    --mute-color: #929292;
     --focus-color: var(--action-color);
     --focus-offset: 4px;
     --active-nav-color: var(--action-color);
     --hover-input-color: var(--action-color);
+    --select-option-hover-color: #E9E9E9;
+    --select-option-focus-color:  var(--action-color);
     --background-color: #FCFCFC;
-    --text-color: #000000;
-    --stock-color: #FF0000;
-    --mute-color: #D3D3D3;
 }
 
 * {
@@ -91,6 +90,92 @@ fieldset {
 .button_theme_secondary:hover {
     background-color: var(--main-color);
     color: var(--secondary-color);
+}
+
+/*Select*/
+.select {
+    position: relative;
+    width: 280px;
+}
+
+.select__label {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 4px;
+}
+
+.select__input {
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 14px 44px 14px 14px;
+    font-size: 18px;
+    line-height: 22px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+}
+
+.select__input:hover {
+    outline: 2px solid var(--hover-input-color);
+}
+
+.select__input:focus {
+    outline: 2px solid var(--focus-color);
+}
+
+.select__open-icon {
+    transition: 0.3s transform;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    stroke: var(--main-color);
+}
+
+.select__open-icon.is-open {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.select__list {
+    border: 1px solid var(--main-color);
+    border-radius: 0 0 5px 5px;
+    margin-top: 4px;
+    position: absolute;
+    width: 100%;
+    background-color: var(--secondary-color);
+}
+
+.select__option {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 12px 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.select__option.is-checked .select__option-icon {
+    display: block;
+}
+
+.select__option:hover {
+    background-color: var(--select-option-hover-color);
+}
+
+.select__option.focus {
+    outline: 2px solid var(--hover-input-color);
+}
+
+.select__option-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: none;
+    pointer-events: none;
 }
 
 /*Input*/
@@ -326,6 +411,17 @@ fieldset {
     justify-content: center;
 }
 
+.catalog-section__filters {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+    gap: 12px;
+}
+
+.catalog-section__count {
+    margin-top: 8px;
+}
+
 .card {
     width: 378px;
     border: 1px solid var(--main-color);
@@ -336,6 +432,9 @@ fieldset {
 .card__images {
     width: 100%;
     display: block;
+    height: 235px;
+    object-fit: contain;
+    border-bottom: 1px solid var(--main-color);
 }
 
 .card__description {
@@ -343,15 +442,17 @@ fieldset {
     flex-direction: column;
     align-items: center;
     padding: 17px 24px 24px 24px;
+    height: 250px;
 }
 
 .card__title {
     font-size: 32px;
     line-height: 39px;
+    text-align: center;
 }
 
 .card__price-block {
-    margin-top: 36px;
+    margin-top: auto;
 }
 
 .card__price {

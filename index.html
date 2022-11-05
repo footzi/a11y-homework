@@ -32,66 +32,131 @@
     <h1 class="main-heading">Товары для котов</h1>
 
     <section class="catalog-section">
-        <div>select</div>
+        <div class="catalog-section__filters">
+            <div class="select j-select j-category-select">
+                <div class="select__label" id="products-select-label">Категории:</div>
+                <div class="select__input j-select-input"
+                     role="combobox"
+                     tabindex="0"
+                     aria-controls="sort-select-list"
+                     aria-expanded="false"
+                     aria-haspopup="listbox"
+                     aria-activedescendant
+                     aria-labelledby="sort-select-label"
+                >
+                    <span class="j-select-label"></span>
+                    <svg class="select__open-icon j-select-open-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37 18L25 30L13 18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="select__list j-select-list" role="listbox" hidden id="products-select-list"></div>
+            </div>
 
-        <ul class="catalog-section__list">
+            <div class="select j-select j-sort-select">
+                <div class="select__label" id="sort-select-label">Сортировать по:</div>
+                <div class="select__input j-select-input"
+                     role="combobox"
+                     tabindex="0"
+                     aria-controls="sort-select-list"
+                     aria-expanded="false"
+                     aria-haspopup="listbox"
+                     aria-activedescendant
+                     aria-labelledby="sort-select-label"
+                >
+                    <span class="j-select-label"></span>
+                    <svg class="select__open-icon j-select-open-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M37 18L25 30L13 18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="select__list j-select-list" role="listbox" hidden id="sort-select-list"></div>
+            </div>
+        </div>
+
+        <h3 class="catalog-section__count j-catalog-count">Найдено <span class="j-catalog-count-value">7</span> товаров</h3>
+
+        <ul class="catalog-section__list j-catalog">
             <li>
-                <article class="card">
-                    <img class="card__images" src="./images/cat-1.jpg" alt="Коврик бла бла бла">
+                <article class="card j-catalog-item" data-price="235" data-rate="1" data-category="board">
+                    <img class="card__images" src="./images/когтеточка-1.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Коврик для кота</p>
+                        <p class="card__title">Когтеточка большая</p>
                         <div class="card__price-block">
-                            <span class="card__price">100 $</span>
-                            <s class="card__old-price">200 $</s>
+                            <span class="card__price">235 ₽</span>
+                            <s class="card__old-price">675 ₽</s>
                         </div>
                         <button class="button card__button">Купить</button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card">
-                    <img class="card__images" src="./images/cat-1.jpg" alt="Коврик бла бла бла">
+                <article class="card j-catalog-item" data-price="990" data-rate="4" data-category="baggage">
+                    <img class="card__images" src="./images/переноска-1.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Коврик для кота</p>
+                        <p class="card__title">Переноска пластиковая</p>
                         <div class="card__price-block">
-                            <span class="card__price">100 $</span>
-                            <s class="card__old-price">200 $</s>
+                            <span class="card__price">990 ₽</span>
+                            <s class="card__old-price">1 999 ₽</s>
                         </div>
                         <button class="button card__button">Купить</button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card">
-                    <img class="card__images" src="./images/cat-1.jpg" alt="Коврик бла бла бла">
+                <article class="card j-catalog-item" data-price="700" data-rate="3" data-category="baggage">
+                    <img class="card__images" src="./images/переноска-2.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Коврик для кота</p>
+                        <p class="card__title">Переноска мягкая</p>
                         <div class="card__price-block">
-                            <span class="card__price">100 $</span>
+                            <span class="card__price">700 ₽</span>
                         </div>
                         <button class="button card__button">Купить</button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card">
-                    <img class="card__images" src="./images/cat-1.jpg" alt="Коврик бла бла бла">
+                <article class="card j-catalog-item" data-price="400" data-rate="2" data-category="sofa">
+                    <img class="card__images" src="./images/лежанка-1.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Коврик для кота</p>
+                        <p class="card__title">Лежанка "Happy Friends"</p>
                         <div class="card__price-block">
-                            <span class="card__price">100 $</span>
+                            <span class="card__price">400 ₽</span>
                         </div>
                         <button class="button card__button">Купить</button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card">
-                    <img class="card__images" src="./images/cat-1.jpg" alt="Коврик бла бла бла">
+                <article class="card j-catalog-item" data-price="1700" data-rate="2" data-category="sofa">
+                    <img class="card__images" src="./images/лежанка-2.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Коврик для кота</p>
+                        <p class="card__title">Лежанка "Не Один Дома"</p>
                         <div class="card__price-block">
-                            <span class="card__price">100 $</span>
+                            <span class="card__price">1 700 ₽</span>
+                        </div>
+                        <button class="button card__button">Купить</button>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article class="card j-catalog-item" data-price="1390" data-rate="4" data-category="house">
+                    <img class="card__images" src="./images/домик-1.webp" alt="Коврик бла бла бла">
+                    <div class="card__description">
+                        <p class="card__title">Домик "Оксфорд"</p>
+                        <div class="card__price-block">
+                            <span class="card__price">1 390 ₽</span>
+                            <s class="card__old-price">2 300 ₽</s>
+                        </div>
+                        <button class="button card__button">Купить</button>
+                    </div>
+                </article>
+            </li>
+            <li>
+                <article class="card j-catalog-item" data-price="600" data-rate="5" data-category="house">
+                    <img class="card__images" src="./images/домик-2.webp" alt="Коврик бла бла бла">
+                    <div class="card__description">
+                        <p class="card__title">Домик "Палатка ушастая"</p>
+                        <div class="card__price-block">
+                            <span class="card__price">600 ₽</span>
                         </div>
                         <button class="button card__button">Купить</button>
                     </div>
@@ -165,7 +230,7 @@
                     <li>
                         <a class="footer__social-link" href="mailto:mail@mail.ru"
                            aria-label="Написать электронное письмо">
-                            <svg viewBox="0 0 474 474" role="decoration">
+                            <svg viewBox="0 0 474 474">
                                 <path d="M437.5,59.3h-401C16.4,59.3,0,75.7,0,95.8v282.4c0,20.1,16.4,36.5,36.5,36.5h401c20.1,0,36.5-16.4,36.5-36.5V95.8
                                         C474,75.7,457.6,59.3,437.5,59.3z M432.2,86.3L239.5,251.1L46.8,86.3H432.2z M447,378.2c0,5.2-4.3,9.5-9.5,9.5h-401
                                         c-5.2,0-9.5-4.3-9.5-9.5V104.9l203.7,174.2c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0.1,0.3,0.2,0.4,0.3c0.3,0.2,0.5,0.4,0.8,0.5
@@ -179,7 +244,7 @@
                     </li>
                     <li>
                         <a class="footer__social-link" href="https://telegram.ru" aria-label="Перейти в телеграм">
-                            <svg viewBox="0 0 189.473 189.473" role="decoration">
+                            <svg viewBox="0 0 189.473 189.473">
                                 <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972
                                         c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955
                                         c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001
@@ -195,7 +260,7 @@
                     </li>
                     <li>
                         <a class="footer__social-link" href="https://facebook.ru" aria-label="Перейти в фейсбук">
-                            <svg viewBox="0 0 310 310" role="decoration">
+                            <svg viewBox="0 0 310 310">
                                 <path d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
                                         c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
                                         V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
@@ -284,5 +349,10 @@
         </form>
     </div>
 </div>
+<!--<script src="https://unpkg.com/tabbable/dist/index.umd.js"></script>-->
+<!--<script src="https://unpkg.com/focus-trap/dist/focus-trap.umd.js"></script>-->
+<script src="./scripts/select.js"></script>
+<script src="./scripts/catalog.js"></script>
+<script src="./scripts/index.js"></script>
 </body>
 </html>

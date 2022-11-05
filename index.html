@@ -181,41 +181,78 @@
     </section>
 
     <section class="details-section">
-        <h2 class="secondary-heading">
+        <h2 class="secondary-heading" id="tablist-label">
             Подробнее о товарах для котов
         </h2>
 
-        <div class="details-section__buttons">
-            <button class="button">O котах</button>
-            <button class="button button_theme_secondary">О товарах</button>
-        </div>
+        <div class="j-tabs">
+            <div class="details-section__buttons" role="tablist" aria-labelledby="tablist-label">
+                <button
+                        id="tab1"
+                        class="button j-tabs-button"
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="tabpanel-1"
 
-        <div class="details-section__content">
-            <div class="details-section__content-cats">
-                <p>
-                    Всего существует 33 основных кошачьих породы. А количество домашних кошек в мире достигает 500
-                    миллионов.
-                </p>
-                <p>
-                    Частота пульса у кошки гораздо выше, чем у человека и составляет от 110 до 140 ударов сердца в
-                    минуту.
-                </p>
-                <p>В среднем кошки весят около пяти килограммов, а вот кошки Сингапурской породы – всего два с небольшим
-                    килограмма.</p>
-                <p>Самыми маленькими кошками считаются представители индийской рыжей пятнистой породы, живущие в
-                    Шри-Ланке.
-                    Их вес не превосходит полутора килограмм, а размер составляет около 15 сантиметров.
-                </p>
+                        data-tab-button="cats"
+                >
+                    О котах
+                </button>
+                <button
+                        id="tab2"
+                        class="button button_theme_secondary j-tabs-button"
+                        type="button"
+                        role="tab"
+                        aria-controls="tabpanel-2"
+                        aria-selected="false"
+                        tabindex="-1"
+                        data-tab-button="products"
+                >
+                    О товарах
+                </button>
             </div>
 
-            <div class="details-section__content-products">
-                <p>
-                    Наш магазин предлагает широкий ассортимент товаров для Ваших кошек. В нашем магазине Вы найдете
-                    свыше 8000 наименований товаров для Ваших пушистых питомцев. У нас представлены корма и лакомства
-                    более 40 ведущих брендов, прекрасный ассортимент аксессуаров, домики и когтеточки, туалеты и
-                    наполнители, игрушки и средства по уходу. Вы найдете все необходимое в нашем магазине, добро
-                    пожаловать!
-                </p>
+            <div class="details-section__content">
+                <div
+                        id="tabpanel-1"
+                        class="j-tabs-panel"
+                        role="tabpanel"
+                        aria-labelledby="tab1"
+                        data-tab-panel="cats"
+                >
+                    <p>
+                        Всего существует 33 основных кошачьих породы. А количество домашних кошек в мире достигает 500
+                        миллионов.
+                    </p>
+                    <p>
+                        Частота пульса у кошки гораздо выше, чем у человека и составляет от 110 до 140 ударов сердца в
+                        минуту.
+                    </p>
+                    <p>В среднем кошки весят около пяти килограммов, а вот кошки Сингапурской породы – всего два с небольшим
+                        килограмма.</p>
+                    <p>Самыми маленькими кошками считаются представители индийской рыжей пятнистой породы, живущие в
+                        Шри-Ланке.
+                        Их вес не превосходит полутора килограмм, а размер составляет около 15 сантиметров.
+                    </p>
+                </div>
+
+                <div
+                        id="tabpanel-2"
+                        class="j-tabs-panel"
+                        role="tabpanel"
+                        aria-labelledby="tab2"
+                        data-tab-panel="products"
+                        hidden
+                >
+                    <p>
+                        Наш магазин предлагает широкий ассортимент товаров для Ваших кошек. В нашем магазине Вы найдете
+                        свыше 8000 наименований товаров для Ваших пушистых питомцев. У нас представлены корма и лакомства
+                        более 40 ведущих брендов, прекрасный ассортимент аксессуаров, домики и когтеточки, туалеты и
+                        наполнители, игрушки и средства по уходу. Вы найдете все необходимое в нашем магазине, добро
+                        пожаловать!
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -351,6 +388,7 @@
 </div>
 <!--<script src="https://unpkg.com/tabbable/dist/index.umd.js"></script>-->
 <!--<script src="https://unpkg.com/focus-trap/dist/focus-trap.umd.js"></script>-->
+<script src="./scripts/tabs.js"></script>
 <script src="./scripts/select.js"></script>
 <script src="./scripts/catalog.js"></script>
 <script src="./scripts/index.js"></script>

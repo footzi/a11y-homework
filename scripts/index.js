@@ -52,3 +52,5 @@ sortSelect.onChange = ((option) => {
 categorySelect.onChange = ((option) => {
     items.filter(option.value)
 })
+
+new window.Tabs('.j-tabs');

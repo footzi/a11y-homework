@@ -76,7 +76,8 @@ fieldset {
     color: var(--main-color);
 }
 
-.button:focus-visible {
+.button:focus-visible,
+.button:focus {
     outline: 2px solid var(--focus-color);
     outline-offset: var(--focus-offset);
 }
@@ -358,6 +359,8 @@ fieldset {
 /*Navigation*/
 .navigation {
     padding: 40px 0;
+
+    display: none;
 }
 
 .navigation__list {
@@ -409,6 +412,8 @@ fieldset {
     grid-row-gap: 33px;
     margin-top: 24px;
     justify-content: center;
+
+    display: none;
 }
 
 .catalog-section__filters {
@@ -416,6 +421,8 @@ fieldset {
     justify-content: flex-end;
     margin-top: 22px;
     gap: 12px;
+
+    display: none;
 }
 
 .catalog-section__count {
@@ -476,6 +483,8 @@ fieldset {
 /*Video*/
 .video-section {
     margin-top: 125px;
+
+    display: none;
 }
 
 .video-section__video {

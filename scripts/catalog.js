@@ -32,12 +32,12 @@ class Catalog {
         const items = this.getItems();
 
         const filteredItems = items.sort((a, b) => {
-           if (value === "asc") {
-               return Number(a.dataset.price) - Number(b.dataset.price);
-           }
+            if (value === "asc") {
+                return Number(a.dataset.price) - Number(b.dataset.price);
+            }
 
-           return Number(b.dataset.price) - Number(a.dataset.price);
-       })
+            return Number(b.dataset.price) - Number(a.dataset.price);
+        })
 
         this.paint(filteredItems);
     }

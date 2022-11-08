@@ -79,12 +79,12 @@
                 <article class="card j-catalog-item" data-price="235" data-rate="1" data-category="board">
                     <img class="card__images" src="./images/когтеточка-1.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Когтеточка большая</p>
+                        <p class="card__title j-catalog-item-name">Когтеточка большая</p>
                         <div class="card__price-block">
                             <span class="card__price">235 ₽</span>
                             <s class="card__old-price">675 ₽</s>
                         </div>
-                        <button class="button card__button">Купить</button>
+                        <button class="button card__button j-catalog-button">Купить</button>
                     </div>
                 </article>
             </li>
@@ -92,12 +92,12 @@
                 <article class="card j-catalog-item" data-price="990" data-rate="4" data-category="baggage">
                     <img class="card__images" src="./images/переноска-1.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Переноска пластиковая</p>
+                        <p class="card__title j-catalog-item-name">Переноска пластиковая</p>
                         <div class="card__price-block">
                             <span class="card__price">990 ₽</span>
                             <s class="card__old-price">1 999 ₽</s>
                         </div>
-                        <button class="button card__button">Купить</button>
+                        <button class="button card__button j-catalog-button">Купить</button>
                     </div>
                 </article>
             </li>
@@ -105,11 +105,11 @@
                 <article class="card j-catalog-item" data-price="700" data-rate="3" data-category="baggage">
                     <img class="card__images" src="./images/переноска-2.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Переноска мягкая</p>
+                        <p class="card__title j-catalog-item-name">Переноска мягкая</p>
                         <div class="card__price-block">
                             <span class="card__price">700 ₽</span>
                         </div>
-                        <button class="button card__button">Купить</button>
+                        <button class="button card__button j-catalog-button">Купить</button>
                     </div>
                 </article>
             </li>
@@ -117,11 +117,11 @@
                 <article class="card j-catalog-item" data-price="400" data-rate="2" data-category="sofa">
                     <img class="card__images" src="./images/лежанка-1.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Лежанка "Happy Friends"</p>
+                        <p class="card__title j-catalog-item-name">Лежанка "Happy Friends"</p>
                         <div class="card__price-block">
                             <span class="card__price">400 ₽</span>
                         </div>
-                        <button class="button card__button">Купить</button>
+                        <button class="button card__button j-catalog-button">Купить</button>
                     </div>
                 </article>
             </li>
@@ -129,11 +129,11 @@
                 <article class="card j-catalog-item" data-price="1700" data-rate="2" data-category="sofa">
                     <img class="card__images" src="./images/лежанка-2.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Лежанка "Не Один Дома"</p>
+                        <p class="card__title j-catalog-item-name">Лежанка "Не Один Дома"</p>
                         <div class="card__price-block">
                             <span class="card__price">1 700 ₽</span>
                         </div>
-                        <button class="button card__button">Купить</button>
+                        <button class="button card__button j-catalog-button">Купить</button>
                     </div>
                 </article>
             </li>
@@ -141,12 +141,12 @@
                 <article class="card j-catalog-item" data-price="1390" data-rate="4" data-category="house">
                     <img class="card__images" src="./images/домик-1.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Домик "Оксфорд"</p>
+                        <p class="card__title j-catalog-item-name">Домик "Оксфорд"</p>
                         <div class="card__price-block">
                             <span class="card__price">1 390 ₽</span>
                             <s class="card__old-price">2 300 ₽</s>
                         </div>
-                        <button class="button card__button">Купить</button>
+                        <button class="button card__button j-catalog-button">Купить</button>
                     </div>
                 </article>
             </li>
@@ -154,11 +154,11 @@
                 <article class="card j-catalog-item" data-price="600" data-rate="5" data-category="house">
                     <img class="card__images" src="./images/домик-2.webp" alt="Коврик бла бла бла">
                     <div class="card__description">
-                        <p class="card__title">Домик "Палатка ушастая"</p>
+                        <p class="card__title j-catalog-item-name">Домик "Палатка ушастая"</p>
                         <div class="card__price-block">
                             <span class="card__price">600 ₽</span>
                         </div>
-                        <button class="button card__button">Купить</button>
+                        <button class="button card__button j-catalog-button">Купить</button>
                     </div>
                 </article>
             </li>
@@ -312,85 +312,41 @@
 
         <div class="footer__callback">
             <h3 class="heading-h3">Подписка на новости</h3>
-            <form class="footer__callback-form">
-
+            <form class="footer__callback-form j-subscribe-form">
                 <div class="footer__callback-form-email">
                     <div class="form-item">
                         <label for="email" class="label">Email</label>
-                        <input id="email" name="email" type="email" placeholder="gmail@gmail.com" required
-                               class="input">
+                        <input
+                            id="email"
+                            class="input"
+                            name="email"
+                            type="email"
+                            placeholder="gmail@gmail.com"
+                            required
+                        >
                     </div>
 
                     <div class="footer__callback-form-agreement checkbox-item">
-                        <input id="agreement" type="checkbox" class="checkbox">
+                        <input id="agreement" type="checkbox" class="checkbox" required>
                         <label for="agreement">Согласен на обработку персональных данных</label>
                     </div>
                 </div>
 
-                <button type="submit" class="button footer__callback-form-button">Подписаться</button>
+                <button type="submit" class="button footer__callback-form-button" aria-haspopup="modal">Подписаться</button>
             </form>
         </div>
     </div>
 </footer>
 
-<div class="modal">
-    <div class="modal__content">
-        <button class="modal__close" aria-label="Закрыть модальное окно">
-            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.22566 4.81096C5.83514 4.42044 5.20197 4.42044 4.81145 4.81096C4.42092 5.20148 4.42092 5.83465 4.81145 6.22517L10.5862 11.9999L4.81151 17.7746C4.42098 18.1651 4.42098 18.7983 4.81151 19.1888C5.20203 19.5793 5.8352 19.5793 6.22572 19.1888L12.0004 13.4141L17.7751 19.1888C18.1656 19.5793 18.7988 19.5793 19.1893 19.1888C19.5798 18.7983 19.5798 18.1651 19.1893 17.7746L13.4146 11.9999L19.1893 6.22517C19.5799 5.83465 19.5799 5.20148 19.1893 4.81096C18.7988 4.42044 18.1657 4.42044 17.7751 4.81096L12.0004 10.5857L6.22566 4.81096Z"/>
-            </svg>
-        </button>
-        <h3 class="heading-h3">Коврик для кота</h3>
-        <p class="modal__description">Оформление заказа</p>
 
-        <form class="modal__form">
-            <fieldset>
-                <legend hidden>Данные о доставке</legend>
-                <div class="form-item">
-                    <label for="name" class="label">Имя и фамилия</label>
-                    <input id="name" name="name" type="text" placeholder="Кот Котеевич" required class="input">
-                </div>
 
-                <div class="form-item">
-                    <label for="order-email" class="label">E-mail</label>
-                    <input id="order-email" name="order-email" type="email" placeholder="gmail@gmail.com" required
-                           class="input">
-                </div>
-
-                <div class="form-item">
-                    <label for="address" class="label">Адрес доставки</label>
-                    <textarea id="address" name="address" placeholder="Введите полный почтовый адрес с индексом"
-                              required class="textarea" rows="4">
-                        </textarea>
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <legend class="label">Способ оплаты</legend>
-                <div class="form-item">
-                    <div class="radio-groups">
-                        <div class="radio-groups__item">
-                            <input type="radio" id="cards" name="payments">
-                            <label for="cards">Картой</label>
-                        </div>
-
-                        <div class="radio-groups__item">
-                            <input type="radio" id="cash" name="payments">
-                            <label for="cash">Наличными</label>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
-
-            <button class="button modal__submit-button" type="submit">Отправить</button>
-        </form>
-    </div>
-</div>
-<!--<script src="https://unpkg.com/tabbable/dist/index.umd.js"></script>-->
-<!--<script src="https://unpkg.com/focus-trap/dist/focus-trap.umd.js"></script>-->
+<script src="https://unpkg.com/tabbable/dist/index.umd.js"></script>
+<script src="https://unpkg.com/focus-trap/dist/focus-trap.umd.js"></script>
 <script src="./scripts/tabs.js"></script>
 <script src="./scripts/select.js"></script>
 <script src="./scripts/catalog.js"></script>
+<script src="./scripts/modal.js"></script>
+<script src="./scripts/form.js"></script>
 <script src="./scripts/index.js"></script>
 </body>
 </html>

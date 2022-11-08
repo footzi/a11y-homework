@@ -4,6 +4,8 @@ class Catalog {
         this.countContainer = document.querySelector('.j-catalog-count');
         this.countValue = document.querySelector('.j-catalog-count-value');
         this.initalItems = this.getItems();
+
+        this.bindEvents(this.initalItems);
     }
 
     getItems() {
@@ -73,6 +75,21 @@ class Catalog {
 
         this.countValue.innerHTML = items.length;
         this.countContainer.setAttribute('aria-live', 'polite');
+
+        this.bindEvents(items);
+    }
+
+    bindEvents(items) {
+        items.forEach((item) => {
+            const button = item.querySelector('.j-catalog-button');
+
+            button.addEventListener('click', () => {
+                const name = item.querySelector('.j-catalog-item-name').textContent;
+                this.onClick({
+                    name
+                });
+            })
+        })
     }
 }
 

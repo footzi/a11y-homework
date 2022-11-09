@@ -2,10 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Манаков Владислав - Купи кота!</title>
+    <title>Манаков Владислав - Товары для котов</title>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
+<a href="#main" class="skip-link">К основному контенту</a>
+
 <header class="header">
     <nav class="navigation">
         <ul class="navigation__list">
@@ -28,8 +30,8 @@
     </nav>
 </header>
 
-<main class="main">
-    <h1 class="main-heading">Товары для котов</h1>
+<main class="main" id="main">
+    <h1 class="heading-h1">Товары для котов</h1>
 
     <section class="catalog-section">
         <div class="catalog-section__filters">
@@ -45,7 +47,8 @@
                      aria-labelledby="sort-select-label"
                 >
                     <span class="j-select-label"></span>
-                    <svg class="select__open-icon j-select-open-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="select__open-icon j-select-open-icon" viewBox="0 0 48 48" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M37 18L25 30L13 18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
@@ -64,7 +67,8 @@
                      aria-labelledby="sort-select-label"
                 >
                     <span class="j-select-label"></span>
-                    <svg class="select__open-icon j-select-open-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="select__open-icon j-select-open-icon" viewBox="0 0 48 48" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M37 18L25 30L13 18" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </div>
@@ -72,93 +76,200 @@
             </div>
         </div>
 
-        <h3 class="catalog-section__count j-catalog-count">Найдено <span class="j-catalog-count-value">7</span> товаров</h3>
+        <div class="j-catalog-count-container">
+            <p class="catalog-section__count j-catalog-count" role="alert">Найдено 7 товаров</p>
+        </div>
 
         <ul class="catalog-section__list j-catalog">
             <li>
-                <article class="card j-catalog-item" data-price="235" data-rate="1" data-category="board">
-                    <img class="card__images" src="./images/когтеточка-1.webp" alt="Коврик бла бла бла">
+                <article
+                        class="card j-catalog-item"
+                        data-price="235"
+                        data-rate="1"
+                        data-category="board"
+                        aria-labelledby="card-title-1"
+                >
+                    <img
+                            class="card__images"
+                            src="./images/когтеточка-1.webp"
+                            alt="Коричневая когтеточка из картона с зелеными бортиками"
+                    >
                     <div class="card__description">
-                        <p class="card__title j-catalog-item-name">Когтеточка большая</p>
-                        <div class="card__price-block">
+                        <p class="card__title j-catalog-item-name" id="card-title-1">Когтеточка большая</p>
+                        <div class="card__price-block" aria-label="Стоимость 235 рублей, старая цена 675 рублей" role="group">
                             <span class="card__price">235 ₽</span>
                             <s class="card__old-price">675 ₽</s>
                         </div>
-                        <button class="button card__button j-catalog-button">Купить</button>
+                        <button
+                                class="button card__button j-catalog-button"
+                                aria-labelledby="card-title-1"
+                                aria-haspopup="dialog"
+                        >Купить
+                        </button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card j-catalog-item" data-price="990" data-rate="4" data-category="baggage">
-                    <img class="card__images" src="./images/переноска-1.webp" alt="Коврик бла бла бла">
+                <article
+                        class="card j-catalog-item"
+                        data-price="990"
+                        data-rate="4"
+                        data-category="baggage"
+                        aria-labelledby="card-title-2"
+                >
+                    <img
+                            class="card__images"
+                            src="./images/переноска-1.webp"
+                            alt="Серая пластиковая переноска с железными дверцами"
+                    >
                     <div class="card__description">
-                        <p class="card__title j-catalog-item-name">Переноска пластиковая</p>
-                        <div class="card__price-block">
+                        <p class="card__title j-catalog-item-name" id="card-title-2">Переноска пластиковая</p>
+                        <div class="card__price-block" aria-label="Стоимость 990 рублей, старая цена 1 999 рублей">
                             <span class="card__price">990 ₽</span>
                             <s class="card__old-price">1 999 ₽</s>
                         </div>
-                        <button class="button card__button j-catalog-button">Купить</button>
+                        <button
+                                class="button card__button j-catalog-button"
+                                aria-labelledby="card-title-2"
+                                aria-haspopup="dialog"
+                        >Купить
+                        </button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card j-catalog-item" data-price="700" data-rate="3" data-category="baggage">
-                    <img class="card__images" src="./images/переноска-2.webp" alt="Коврик бла бла бла">
+                <article
+                        class="card j-catalog-item"
+                        data-price="700"
+                        data-rate="3"
+                        data-category="baggage"
+                        aria-labelledby="card-title-3"
+                >
+                    <img
+                            class="card__images"
+                            src="./images/переноска-2.webp"
+                            alt="Белая мягкая переноска с черным подкладом внутри"
+                    >
                     <div class="card__description">
-                        <p class="card__title j-catalog-item-name">Переноска мягкая</p>
-                        <div class="card__price-block">
+                        <p class="card__title j-catalog-item-name" id="card-title-3">Переноска мягкая</p>
+                        <div class="card__price-block" aria-label="Стоимость 700 рублей">
                             <span class="card__price">700 ₽</span>
                         </div>
-                        <button class="button card__button j-catalog-button">Купить</button>
+                        <button
+                                class="button card__button j-catalog-button"
+                                aria-labelledby="card-title-3"
+                                aria-haspopup="dialog"
+                        >Купить
+                        </button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card j-catalog-item" data-price="400" data-rate="2" data-category="sofa">
-                    <img class="card__images" src="./images/лежанка-1.webp" alt="Коврик бла бла бла">
+                <article
+                        class="card j-catalog-item"
+                        data-price="400"
+                        data-rate="2"
+                        data-category="sofa"
+                        aria-labelledby="card-title-4"
+                >
+                    <img
+                            class="card__images"
+                            src="./images/лежанка-1.webp"
+                            alt="Серая мягкая лежанка с белыми звездочками"
+                    >
                     <div class="card__description">
-                        <p class="card__title j-catalog-item-name">Лежанка "Happy Friends"</p>
-                        <div class="card__price-block">
+                        <p class="card__title j-catalog-item-name" id="card-title-4">Лежанка "Happy Friends"</p>
+                        <div class="card__price-block" aria-label="Стоимость 400 рублей">
                             <span class="card__price">400 ₽</span>
                         </div>
-                        <button class="button card__button j-catalog-button">Купить</button>
+                        <button
+                                class="button card__button j-catalog-button"
+                                aria-labelledby="card-title-4"
+                                aria-haspopup="dialog"
+                        >Купить
+                        </button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card j-catalog-item" data-price="1700" data-rate="2" data-category="sofa">
-                    <img class="card__images" src="./images/лежанка-2.webp" alt="Коврик бла бла бла">
+                <article
+                        class="card j-catalog-item"
+                        data-price="1700"
+                        data-rate="2"
+                        data-category="sofa"
+                        aria-labelledby="card-title-5"
+                >
+                    <img
+                            class="card__images"
+                            src="./images/лежанка-2.webp"
+                            alt="Одноцветная серая лежанка с невысокими бортиками"
+                    >
                     <div class="card__description">
-                        <p class="card__title j-catalog-item-name">Лежанка "Не Один Дома"</p>
-                        <div class="card__price-block">
+                        <p class="card__title j-catalog-item-name" id="card-title-5">Лежанка "Не Один Дома"</p>
+                        <div class="card__price-block" aria-label="Стоимость 1700 рублей">
                             <span class="card__price">1 700 ₽</span>
                         </div>
-                        <button class="button card__button j-catalog-button">Купить</button>
+                        <button
+                                class="button card__button j-catalog-button"
+                                aria-labelledby="card-title-5"
+                                aria-haspopup="dialog"
+                        >Купить
+                        </button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card j-catalog-item" data-price="1390" data-rate="4" data-category="house">
-                    <img class="card__images" src="./images/домик-1.webp" alt="Коврик бла бла бла">
+                <article
+                        class="card j-catalog-item"
+                        data-price="1390"
+                        data-rate="4"
+                        data-category="house"
+                        aria-labelledby="card-title-6"
+                >
+                    <img
+                            class="card__images"
+                            src="./images/домик-1.webp"
+                            alt="Мягкий домик треугольной формы серого цвета"
+                    >
                     <div class="card__description">
-                        <p class="card__title j-catalog-item-name">Домик "Оксфорд"</p>
-                        <div class="card__price-block">
+                        <p class="card__title j-catalog-item-name" id="card-title-6">Домик "Оксфорд"</p>
+                        <div class="card__price-block" aria-label="Стоимость 1 390 рублей">
                             <span class="card__price">1 390 ₽</span>
                             <s class="card__old-price">2 300 ₽</s>
                         </div>
-                        <button class="button card__button j-catalog-button">Купить</button>
+                        <button
+                                class="button card__button j-catalog-button"
+                                aria-labelledby="card-title-6"
+                                aria-haspopup="dialog"
+                        >Купить
+                        </button>
                     </div>
                 </article>
             </li>
             <li>
-                <article class="card j-catalog-item" data-price="600" data-rate="5" data-category="house">
-                    <img class="card__images" src="./images/домик-2.webp" alt="Коврик бла бла бла">
+                <article
+                        class="card j-catalog-item"
+                        data-price="600"
+                        data-rate="5"
+                        data-category="house"
+                        aria-labelledby="card-title-7"
+                >
+                    <img
+                            class="card__images"
+                            src="./images/домик-2.webp"
+                            alt="Треугольный домик серого цвета с ушками и усиками как у котика"
+                    >
                     <div class="card__description">
-                        <p class="card__title j-catalog-item-name">Домик "Палатка ушастая"</p>
-                        <div class="card__price-block">
+                        <p class="card__title j-catalog-item-name" id="card-title-7">Домик "Палатка ушастая"</p>
+                        <div class="card__price-block" aria-label="Стоимость 600 рублей">
                             <span class="card__price">600 ₽</span>
                         </div>
-                        <button class="button card__button j-catalog-button">Купить</button>
+                        <button
+                                class="button card__button j-catalog-button"
+                                aria-labelledby="card-title-7"
+                                aria-haspopup="dialog"
+                        >Купить
+                        </button>
                     </div>
                 </article>
             </li>
@@ -166,8 +277,7 @@
     </section>
 
     <section class="video-section">
-        <h2 class="secondary-heading">Видео о товарах для котов</h2>
-        <!--            перейти в видео-->
+        <h2 class="heading-h1">Видео о товарах для котов</h2>
         <div class="video-section__video">
             <iframe
                     width="100%"
@@ -181,7 +291,7 @@
     </section>
 
     <section class="details-section">
-        <h2 class="secondary-heading" id="tablist-label">
+        <h2 class="heading-h1" id="tablist-label">
             Подробнее о товарах для котов
         </h2>
 
@@ -229,7 +339,8 @@
                         Частота пульса у кошки гораздо выше, чем у человека и составляет от 110 до 140 ударов сердца в
                         минуту.
                     </p>
-                    <p>В среднем кошки весят около пяти килограммов, а вот кошки Сингапурской породы – всего два с небольшим
+                    <p>В среднем кошки весят около пяти килограммов, а вот кошки Сингапурской породы – всего два с
+                        небольшим
                         килограмма.</p>
                     <p>Самыми маленькими кошками считаются представители индийской рыжей пятнистой породы, живущие в
                         Шри-Ланке.
@@ -247,7 +358,8 @@
                 >
                     <p>
                         Наш магазин предлагает широкий ассортимент товаров для Ваших кошек. В нашем магазине Вы найдете
-                        свыше 8000 наименований товаров для Ваших пушистых питомцев. У нас представлены корма и лакомства
+                        свыше 8000 наименований товаров для Ваших пушистых питомцев. У нас представлены корма и
+                        лакомства
                         более 40 ведущих брендов, прекрасный ассортимент аксессуаров, домики и когтеточки, туалеты и
                         наполнители, игрушки и средства по уходу. Вы найдете все необходимое в нашем магазине, добро
                         пожаловать!
@@ -267,7 +379,7 @@
                     <li>
                         <a class="footer__social-link" href="mailto:mail@mail.ru"
                            aria-label="Написать электронное письмо">
-                            <svg viewBox="0 0 474 474">
+                            <svg viewBox="0 0 474 474" aria-hidden="true">
                                 <path d="M437.5,59.3h-401C16.4,59.3,0,75.7,0,95.8v282.4c0,20.1,16.4,36.5,36.5,36.5h401c20.1,0,36.5-16.4,36.5-36.5V95.8
                                         C474,75.7,457.6,59.3,437.5,59.3z M432.2,86.3L239.5,251.1L46.8,86.3H432.2z M447,378.2c0,5.2-4.3,9.5-9.5,9.5h-401
                                         c-5.2,0-9.5-4.3-9.5-9.5V104.9l203.7,174.2c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0.1,0.3,0.2,0.4,0.3c0.3,0.2,0.5,0.4,0.8,0.5
@@ -281,7 +393,7 @@
                     </li>
                     <li>
                         <a class="footer__social-link" href="https://telegram.ru" aria-label="Перейти в телеграм">
-                            <svg viewBox="0 0 189.473 189.473">
+                            <svg viewBox="0 0 189.473 189.473" aria-hidden="true">
                                 <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972
                                         c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955
                                         c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001
@@ -297,7 +409,7 @@
                     </li>
                     <li>
                         <a class="footer__social-link" href="https://facebook.ru" aria-label="Перейти в фейсбук">
-                            <svg viewBox="0 0 310 310">
+                            <svg viewBox="0 0 310 310" aria-hidden="true">
                                 <path d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
                                         c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
                                         V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
@@ -317,27 +429,34 @@
                     <div class="form-item">
                         <label for="email" class="label">Email</label>
                         <input
-                            id="email"
-                            class="input"
-                            name="email"
-                            type="email"
-                            placeholder="gmail@gmail.com"
-                            required
+                                id="email"
+                                class="input"
+                                name="email"
+                                type="email"
+                                placeholder="gmail@gmail.com"
                         >
+                        <div class="form-error" id="email-error" aria-live="polite"></div>
                     </div>
 
-                    <div class="footer__callback-form-agreement checkbox-item">
-                        <input id="agreement" type="checkbox" class="checkbox" required>
-                        <label for="agreement">Согласен на обработку персональных данных</label>
+                    <div class="footer__callback-form-agreement">
+                        <div class="checkbox-item">
+                            <input id="agreement" type="checkbox" class="checkbox" name="agreement">
+                            <label for="agreement">Согласен на обработку персональных данных</label>
+                        </div>
+                        <div class="form-error" id="agreement-error" aria-live="polite"></div>
                     </div>
                 </div>
 
-                <button type="submit" class="button footer__callback-form-button" aria-haspopup="modal">Подписаться</button>
+                <button
+                        type="submit"
+                        class="button footer__callback-form-button"
+                        aria-haspopup="dialog"
+                >Подписаться
+                </button>
             </form>
         </div>
     </div>
 </footer>
-
 
 
 <script src="https://unpkg.com/tabbable/dist/index.umd.js"></script>

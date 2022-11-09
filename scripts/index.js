@@ -41,8 +41,8 @@ const sortOptions = [
     },
 ]
 
-const sortSelect = new window.Select(".j-sort-select", sortOptions);
-const categorySelect = new window.Select(".j-category-select", categoryOptions);
+const sortSelect = new window.Select(".j-sort-select", 'sort-select', sortOptions);
+const categorySelect = new window.Select(".j-category-select", 'category-select', categoryOptions);
 
 // Catalog
 const items = new window.Catalog();
@@ -63,7 +63,20 @@ const subscribeModal = new window.SubscribeModal();
 const catalogModal = new window.CatalogModal();
 
 // Form
-const subscribeForm = new window.Form('.j-subscribe-form');
+const subscribeForm = new window.Form('.j-subscribe-form', [
+    {
+        name: "email",
+        isRequired: true,
+        requiredMessageError: "Введите адрес электронной почты",
+        type: "text"
+    },
+    {
+        name: "agreement",
+        isRequired: true,
+        requiredMessageError: "Для продолжения примите соглашение",
+        type: "checkbox"
+    },
+]);
 
 subscribeForm.onSubmit = () => {
     subscribeModal.open();

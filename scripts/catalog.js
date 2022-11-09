@@ -1,8 +1,13 @@
+const pluralize = (count, words) => {
+    const cases = [2, 0, 1, 1, 1, 2];
+    return count + ' ' + words[ (count % 100 > 4 && count % 100 < 20) ? 2 : cases[ Math.min(count % 10, 5)] ];
+}
+
 class Catalog {
     constructor() {
         this.catalog = document.querySelector('.j-catalog');
-        this.countContainer = document.querySelector('.j-catalog-count');
-        this.countValue = document.querySelector('.j-catalog-count-value');
+        this.countValue = document.querySelector('.j-catalog-count');
+        this.countValueContainer = document.querySelector('.j-catalog-count-container');
         this.initalItems = this.getItems();
 
         this.bindEvents(this.initalItems);
@@ -73,10 +78,17 @@ class Catalog {
             this.catalog.appendChild(item);
         })
 
-        this.countValue.innerHTML = items.length;
-        this.countContainer.setAttribute('aria-live', 'polite');
-
+        this.updateCountText(items);
         this.bindEvents(items);
+    }
+
+    updateCountText(items) {
+        const plural = pluralize(items.length, ['товар', 'товара', 'товаров']);
+
+        // Удаляем из дома, чтобы скринридер прочитывал всегда заново (когда кол-во товаров не изменилось)
+        this.countValue.innerHTML = `Найдено ${plural}`;
+        this.countValue.remove();
+        this.countValueContainer.appendChild(this.countValue);
     }
 
     bindEvents(items) {

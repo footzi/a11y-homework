@@ -1,5 +1,6 @@
 class Select {
-    constructor(target, options) {
+    constructor(target, name, options) {
+        this.name = name;
         this.options = options;
         this.select = document.querySelector(target);
         this.input = this.select.querySelector('.j-select-input');
@@ -22,7 +23,7 @@ class Select {
         let items = '';
 
         this.options.forEach(({value, label}) => {
-            const id = `option_${value}`
+            const id = `${this.name}_option_${value}`
             items += `
                 <div class="select__option j-select-option"
                     role="option"

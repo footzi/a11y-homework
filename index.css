@@ -59,6 +59,14 @@ fieldset {
     margin: 0;
 }
 
+.visibility-hidden {
+    position: absolute;
+    left: -999px;
+    width:1px;
+    height: 1px;
+    top: auto;
+}
+
 /*Button*/
 .button {
     transition: color 0.3s, background-color 0.3s;
@@ -510,6 +518,8 @@ fieldset {
     font-size: 32px;
     line-height: 39px;
     text-align: center;
+    margin: 0;
+    font-weight: 400;
 }
 
 .card__price-block {

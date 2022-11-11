@@ -15,8 +15,12 @@ class Modal {
 
     findElements() {
         this.modal = document.querySelector('.j-modal');
+        this.content = this.modal.querySelector('.j-modal-content');
         this.closeButtons = Array.from(this.modal.querySelectorAll('.j-modal-close'));
-        this.focusTrap = window.focusTrap.createFocusTrap('.j-modal');
+
+        this.focusTrap = window.focusTrap.createFocusTrap('.j-modal', {
+            initialFocus: this.content
+        });
         this.overlay = this.modal.querySelector('.j-modal-overlay');
     }
 
@@ -49,14 +53,23 @@ class Modal {
     }
 
     insertContent(template) {
-        const content = this.modal.querySelector('.j-modal-content');
-        content.innerHTML = "";
-        content.insertAdjacentHTML('afterbegin', template);
+        this.content.innerHTML = "";
+        this.content.insertAdjacentHTML('afterbegin', template);
+        this.updateElements();
     }
 
-    focusToCloseButton() {
-        const button = this.closeButtons[0];
-        button.focus();
+    updateElements() {
+        this.closeButtons = Array.from(this.modal.querySelectorAll('.j-modal-close'));
+
+        this.closeButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                this.close();
+            });
+        })
+    }
+
+    focusToContent() {
+        this.content.focus();
     }
 
     getIsEscKey(code) {
@@ -73,20 +86,22 @@ class SubscribeModal extends Modal {
         const template = `
             <div 
                 class="modal j-modal"
-                role="alertdialog"
-                aria-modal="true"
-                aria-labelledby="submit-modal-label"
-                tabindex="-1"
+                role="dialog"
             >
                 <div class="modal__overlay j-modal-overlay"></div>
                 <div class="modal__container">
-                    <div class="modal__content">
+                    <div 
+                        class="modal__content j-modal-content"
+                        aria-labelledby="submit-modal-label"
+                        tabindex="-1"
+                    >
                         <button class="modal__close j-modal-close" aria-label="Закрыть модальное окно">
-                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path d="M6.22566 4.81096C5.83514 4.42044 5.20197 4.42044 4.81145 4.81096C4.42092 5.20148 4.42092 5.83465 4.81145 6.22517L10.5862 11.9999L4.81151 17.7746C4.42098 18.1651 4.42098 18.7983 4.81151 19.1888C5.20203 19.5793 5.8352 19.5793 6.22572 19.1888L12.0004 13.4141L17.7751 19.1888C18.1656 19.5793 18.7988 19.5793 19.1893 19.1888C19.5798 18.7983 19.5798 18.1651 19.1893 17.7746L13.4146 11.9999L19.1893 6.22517C19.5799 5.83465 19.5799 5.20148 19.1893 4.81096C18.7988 4.42044 18.1657 4.42044 17.7751 4.81096L12.0004 10.5857L6.22566 4.81096Z"/>
                             </svg>
                         </button>
                         <h3 class="heading-h3" id="submit-modal-label">Форма успешно отправлена</h3>
+                       
                         <div class="modal__success-icon">
                             <svg viewBox="0 0 50 50">
                                 <circle cx="25" cy="25" r="25"/>
@@ -112,20 +127,21 @@ class CatalogModal extends Modal {
         const template = `
             <div 
                 class="modal j-modal"
-                role="alertdialog"
+                role="dialog"
                 aria-modal="true"
-                aria-labelledby="catalog-modal-label"
-                aria-describedby="catalog-modal-description"
-                tabindex="-1"
             >
                 <div class="modal__overlay j-modal-overlay"></div>
                 <div class="modal__container">
                     <button class="modal__close j-modal-close" aria-label="Закрыть модальное окно">
-                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M6.22566 4.81096C5.83514 4.42044 5.20197 4.42044 4.81145 4.81096C4.42092 5.20148 4.42092 5.83465 4.81145 6.22517L10.5862 11.9999L4.81151 17.7746C4.42098 18.1651 4.42098 18.7983 4.81151 19.1888C5.20203 19.5793 5.8352 19.5793 6.22572 19.1888L12.0004 13.4141L17.7751 19.1888C18.1656 19.5793 18.7988 19.5793 19.1893 19.1888C19.5798 18.7983 19.5798 18.1651 19.1893 17.7746L13.4146 11.9999L19.1893 6.22517C19.5799 5.83465 19.5799 5.20148 19.1893 4.81096C18.7988 4.42044 18.1657 4.42044 17.7751 4.81096L12.0004 10.5857L6.22566 4.81096Z"/>
                         </svg>
                     </button>
-                    <div class="modal__content j-modal-content">
+                    <div 
+                        class="modal__content j-modal-content" 
+                        aria-labelledby="catalog-modal-description catalog-modal-label"
+                        tabindex="-1"
+                    >
                         <h3 class="heading-h3" id="catalog-modal-label">${name}</h3>
                         <p class="modal__description" id="catalog-modal-description">Оформление заказа</p>
                 
@@ -203,13 +219,13 @@ class CatalogModal extends Modal {
 
     success() {
         const template = `
-             <div role="alert">
+             <div role="alert" aria-live="polite">
                  <h3 class="heading-h3" id="submit-modal-label">Заявка успешно отправлена</h3>
                  <button class="button modal__submit-button j-modal-close">Закрыть</button>
             </div>
         `
         this.insertContent(template);
-        this.focusToCloseButton();
+        this.focusToContent();
     }
 }
 

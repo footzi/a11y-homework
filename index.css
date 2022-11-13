@@ -571,6 +571,11 @@ fieldset {
     margin-top: 30px;
 }
 
+.video-section__video iframe {
+    width: 100%;
+    height: 100%;
+}
+
 /*Details*/
 .details-section {
     margin-top: 140px;

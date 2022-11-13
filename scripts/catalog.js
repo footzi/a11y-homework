@@ -79,7 +79,6 @@ class Catalog {
         })
 
         this.updateCountText(items);
-        this.bindEvents(items);
     }
 
     updateCountText(items) {
@@ -100,7 +99,7 @@ class Catalog {
                 this.onClick({
                     name
                 });
-            })
+            });
         })
     }
 }
